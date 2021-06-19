@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <div class="short-div ing-div">
+
+                <form class="ing-form">
+
+                    <div class="form-group row">
+                        <label for="categorie" class="col-sm-2 col-form-label">Cat&eacute;gorie</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="categorie" required placeholder="Categorie">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="element" class="col-sm-2 col-form-label">Element</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="element" required placeholder="Element">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="ing-submit-btn btn btn-primary">Ajouter</button>
+
+                </form>
+
+            </div>
+            <div class="ing-inter-div"></div>
+            <div class="short-div ing-div">
+                Op&eacute;rations sur les donn&eacute;es enregistr&eacute;es
+                <div class="ing-btn-exp">
+                    <button type="button" class="btn btn-primary">Exporter les donn&eacute;es</button>
+                </div>
+            </div>
+        </div>
+        <div class="tall-div ing-div col-lg-6 col-md-6 col-sm-6 col-xs-6">
+            <ul id="myUL">
+                <li>
+                    <span class="mycaret">Electrom&eacute;nager</span>
+                    <ul class="nested">
+                        <li>Aspirateur</li>
+                        <li>Lave-vaisselle</li>
+                        <li>Mixeur</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="mycaret">Informatique</span>
+                    <ul class="nested">
+                        <li>Composant</li>
+                        <li>Ecran PC</li>
+                        <li>Laptop</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    var toggler = document.getElementsByClassName("mycaret");
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+        toggler[i].addEventListener("click", function () {
+            this.parentElement.querySelector(".nested").classList.toggle("active");
+            this.classList.toggle("caret-down");
+        });
+    }
+</script>
