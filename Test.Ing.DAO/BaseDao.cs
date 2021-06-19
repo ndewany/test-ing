@@ -24,6 +24,7 @@ namespace Test.Ing.DAO
                 throw;                
             }
             finally {
+                cnn.Dispose();
                 cnn.Close();
             }
                         
