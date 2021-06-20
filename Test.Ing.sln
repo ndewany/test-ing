@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Ing.Console", "Test.In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Ing.Web.MVC", "Test.Ing.Web.MVC\Test.Ing.Web.MVC.csproj", "{7ED03FA7-3A70-4028-97B6-BB763FD72AD1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Ing.DTO", "Test.Ing.DTO\Test.Ing.DTO.csproj", "{CFF5D23C-2EB6-45C2-A481-962C8C50B9F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F929E5E1-E1DC-4C49-9D0A-AEE8E99103B5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +34,10 @@ Global
 		{7ED03FA7-3A70-4028-97B6-BB763FD72AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7ED03FA7-3A70-4028-97B6-BB763FD72AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7ED03FA7-3A70-4028-97B6-BB763FD72AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFF5D23C-2EB6-45C2-A481-962C8C50B9F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFF5D23C-2EB6-45C2-A481-962C8C50B9F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFF5D23C-2EB6-45C2-A481-962C8C50B9F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFF5D23C-2EB6-45C2-A481-962C8C50B9F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

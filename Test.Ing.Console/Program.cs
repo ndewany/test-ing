@@ -16,7 +16,8 @@ namespace Test.Ing.Console
             System.Console.WriteLine($"sum = {sum}");
             try
             {
-                BaseDao.TestConnection();
+                BaseDao baseDao = new BaseDao(new SqlServerDatabase());
+                baseDao.TestConnection();
                 System.Console.WriteLine("Connexion OK");
             }
             catch (SqlException ex)

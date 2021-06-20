@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<Test.Ing.DTO.CategorieDTO>
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -38,22 +39,27 @@
         </div>
         <div class="tall-div ing-div col-lg-6 col-md-6 col-sm-6 col-xs-6">
             <ul id="myUL">
+
+                @foreach (var categorie in Model)
+                {
                 <li>
-                    <span class="mycaret">Electrom&eacute;nager</span>
-                    <ul class="nested">
-                        <li>Aspirateur</li>
-                        <li>Lave-vaisselle</li>
-                        <li>Mixeur</li>
-                    </ul>
+                    @if (categorie.ElementDTOs != null)
+                    {
+                        <span class="mycaret">@categorie.Name</span>
+                        <ul class="nested">
+                            @foreach (var element in categorie.ElementDTOs)
+                            {
+                                <li>@element.Name</li>
+                            }                            
+                        </ul>
+                    }
+                    else
+                    {
+                        <span>@categorie.Name</span>
+                    }
+
                 </li>
-                <li>
-                    <span class="mycaret">Informatique</span>
-                    <ul class="nested">
-                        <li>Composant</li>
-                        <li>Ecran PC</li>
-                        <li>Laptop</li>
-                    </ul>
-                </li>
+                }                
             </ul>
         </div>
     </div>

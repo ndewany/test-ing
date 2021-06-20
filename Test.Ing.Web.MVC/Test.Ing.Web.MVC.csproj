@@ -180,6 +180,16 @@
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Test.Ing.DAO\Test.Ing.DAO.csproj">
+      <Project>{4b8b2984-b481-4f6f-a66d-3188e7485d7f}</Project>
+      <Name>Test.Ing.DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Test.Ing.DTO\Test.Ing.DTO.csproj">
+      <Project>{cff5d23c-2eb6-45c2-a481-962c8c50b9f4}</Project>
+      <Name>Test.Ing.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
