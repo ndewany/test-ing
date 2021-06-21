@@ -18,7 +18,7 @@ namespace Test.Ing.Web.MVC.Controllers
             try
             {
                 BaseDao baseDao = new BaseDao(new SqlServerDatabase());               
-                List<ViewListResult> viewListResult = baseDao.GetAllDataFromView().ToList();
+                List<ViewListResult> viewListResult = baseDao.GetAllData().ToList();
                 var results = from vlr in viewListResult
                               group new { vlr.ID_Element, vlr.ElementName } by new { vlr.ID_Categorie, vlr.CategorieName } into g
                               select new { g.Key.ID_Categorie, g.Key.CategorieName, Elements = g.ToList() };
@@ -40,7 +40,8 @@ namespace Test.Ing.Web.MVC.Controllers
             }
             catch (SqlException ex)
             {
-                throw;
+                //TODO need to catch exception properly
+                throw;               
             }
 
             return View(categorieDTOs);
