@@ -11,9 +11,7 @@ namespace Test.Ing.Console
     static class Program
     {
         static void Main(string[] args)
-        {
-            int sum = 2;
-            System.Console.WriteLine($"sum = {sum}");
+        {            
             try
             {
                 BaseDao baseDao = new BaseDao(new SqlServerDatabase());

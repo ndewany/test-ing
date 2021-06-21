@@ -19,11 +19,14 @@ namespace Test.Ing.Web.MVC.Controllers
             {
                 BaseDao baseDao = new BaseDao(new SqlServerDatabase());               
                 List<ViewListResult> viewListResult = baseDao.GetAllData().ToList();
+
+                //Utilisation de LINQ
                 var results = from vlr in viewListResult
                               group new { vlr.ID_Element, vlr.ElementName } by new { vlr.ID_Categorie, vlr.CategorieName } into g
                               select new { g.Key.ID_Categorie, g.Key.CategorieName, Elements = g.ToList() };
                 foreach (var item in results)
                 {
+                    // On peut utiliser un automapper pour eviter de faire une boucle ici
                     List<ElementDTO> elementDTOs = new List<ElementDTO>();
                     foreach (var itt in item.Elements)
                     {
