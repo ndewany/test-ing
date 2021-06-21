@@ -20,7 +20,7 @@ namespace Test.Ing.DAO
         }
 
         public bool Connect()
-        {            
+        {
             try
             {
                 _cnn.Open();
@@ -30,11 +30,48 @@ namespace Test.Ing.DAO
                 throw;
             }
             finally
-            {                
+            {
                 _cnn.Close();
             }
             return true;
         }
-        
+
+        public IEnumerable<ViewListResult> GetAllData()
+        {
+            List<ViewListResult> viewListResult = new List<ViewListResult> { };
+
+            using (SqlConnection conn = _cnn)
+            {
+                conn.Open();
+
+                try
+                {
+                    string query = $"SELECT * FROM ViewList";
+                    SqlCommand command = new SqlCommand(query, conn);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Int64.TryParse(reader[0].ToString(), out long ID_Categorie);
+                            string categorieName = reader[1].ToString();
+                            Int64.TryParse(reader[2].ToString(), out long ID_Element);
+                            string elementName = reader[3].ToString();
+
+                            viewListResult.Add(new ViewListResult { ID_Categorie = ID_Categorie, CategorieName = categorieName, ID_Element = ID_Element, ElementName = elementName });
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                return viewListResult;
+            }
+        }
     }
 }

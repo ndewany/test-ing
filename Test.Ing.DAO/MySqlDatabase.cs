@@ -15,5 +15,10 @@ namespace Test.Ing.DAO
         {
             throw new NotImplementedException();
         }
+
+        public IEnumerable<ViewListResult> GetAllData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

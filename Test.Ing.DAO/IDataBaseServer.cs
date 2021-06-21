@@ -10,6 +10,7 @@ namespace Test.Ing.DAO
     public interface IDataBaseServer
     {
         IDbConnection DbConn { get; }
-        bool Connect();        
+        bool Connect();
+        IEnumerable<ViewListResult> GetAllData();
     }
 }
